@@ -1,9 +1,22 @@
 pipeline {
   agent any
   stages {
-    stage('Buzz Buzz') {
+    stage('build') {
       steps {
-        echo 'Beez Buzz'
+        echo 'Placeholder'
+      }
+    }
+
+    stage('test') {
+      steps {
+        sh '''echo test
+echo tested successfully'''
+      }
+    }
+
+    stage('deploy') {
+      steps {
+        sh 'echo deployed successfully'
       }
     }
 
