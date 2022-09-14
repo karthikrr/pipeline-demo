@@ -16,7 +16,7 @@ echo tested successfully'''
 
     stage('deploy') {
       steps {
-        sh 'echo deployed successfully'
+        sh 'echo deployed successfullysssss'
       }
     }
 
