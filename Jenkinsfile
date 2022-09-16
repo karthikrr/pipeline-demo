@@ -4,6 +4,7 @@ pipeline {
     stage('build') {
       steps {
         echo 'Placeholder'
+        sh 'mvn -B -DskipTests clean package'
       }
     }
 
@@ -11,6 +12,8 @@ pipeline {
       steps {
         sh '''echo test starting
 echo test completed'''
+        sh 'mvn test'
+        junit 'target/surefire-reports/*.xml'
       }
     }
 
