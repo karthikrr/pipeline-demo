@@ -4,7 +4,7 @@ pipeline {
     stage('build') {
       steps {
         echo 'Placeholder'
-        bat(script: 'mvn -B -DskipTests clean package', returnStdout: true)
+        bat(script: 'D:\\maven\\apache-maven-3.6.3-bin\\apache-maven-3.6.3\\bin\\mvn -B -DskipTests clean package', returnStdout: true)
       }
     }
 
