@@ -10,9 +10,26 @@ pipeline {
     }
 
     stage('test') {
-      steps {
-        bat 'D:\\maven\\apache-maven-3.6.3-bin\\apache-maven-3.6.3\\bin\\mvn  test'
-        junit 'target/surefire-reports/*.xml'
+      parallel {
+        stage('test') {
+          steps {
+            bat 'D:\\maven\\apache-maven-3.6.3-bin\\apache-maven-3.6.3\\bin\\mvn  test'
+            junit 'target/surefire-reports/*.xml'
+          }
+        }
+
+        stage('TestingA') {
+          steps {
+            sleep 10
+          }
+        }
+
+        stage('TestingB') {
+          steps {
+            sleep 10
+          }
+        }
+
       }
     }
 
